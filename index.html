@@ -1389,6 +1389,47 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--drake-orange);
+            color: var(--steel-dark);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            background: #ff7b2a;
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1417,15 +1458,15 @@
 
     <section class="hero" role="banner" aria-label="Star Citizen referral signup with 50,000 UEC bonus">
         <div class="hero-slideshow">
-            <div class="hero-slide" style="background-image: url('pictures/1.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('pictures/2.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('pictures/3.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('pictures/4.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('pictures/5.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('pictures/6.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('pictures/7.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('pictures/8.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('pictures/9.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('pictures/1.webp');"></div>
+            <div class="hero-slide" style="background-image: url('pictures/2.webp');"></div>
+            <div class="hero-slide" style="background-image: url('pictures/3.webp');"></div>
+            <div class="hero-slide" style="background-image: url('pictures/4.webp');"></div>
+            <div class="hero-slide" style="background-image: url('pictures/5.webp');"></div>
+            <div class="hero-slide" style="background-image: url('pictures/6.webp');"></div>
+            <div class="hero-slide" style="background-image: url('pictures/7.webp');"></div>
+            <div class="hero-slide" style="background-image: url('pictures/8.webp');"></div>
+            <div class="hero-slide" style="background-image: url('pictures/9.webp');"></div>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-scanlines"></div>
@@ -1937,6 +1978,9 @@
         </div>
     </section>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">↑</button>
+
     <div class="caution-stripe bottom"></div>
 
     <footer>
@@ -2011,6 +2055,21 @@
                 gtag('event', 'referral_click', { 'event_category': 'engagement' });
             });
         });
+
+        // Back to top button
+        const backToTopBtn = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>

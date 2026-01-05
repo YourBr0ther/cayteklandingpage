@@ -1,0 +1,6 @@
+# Robots.txt for caytek.dev
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://caytek.dev/sitemap.xml
