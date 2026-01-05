@@ -12,7 +12,7 @@
     <meta name="author" content="Caytek Industries">
     <meta name="robots" content="index, follow">
 
-    <!-- Canonical URL - UPDATE THIS when you host the site -->
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://caytek.dev/">
 
     <!-- Open Graph / Facebook -->
@@ -77,7 +77,6 @@
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://images.unsplash.com">
 
     <!-- Fonts with display swap for better performance -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Share+Tech+Mono&family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -90,8 +89,6 @@
             --drake-yellow: #ffc107;
             --warning-yellow: #f4d03f;
             --caution-black: #1a1a1a;
-            --rust: #8b4513;
-            --grime: rgba(0,0,0,0.3);
             --text-primary: #e8e6e3;
             --text-dim: #8a8a8a;
             --bolt-shadow: inset 0 2px 4px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.1);
@@ -1132,28 +1129,6 @@
             padding: 40px 20px;
         }
 
-        .avatar-placeholder {
-            width: 180px;
-            height: 180px;
-            background: linear-gradient(135deg, var(--steel-light) 0%, var(--steel-mid) 100%);
-            border: 3px solid var(--drake-orange);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 64px;
-            color: var(--drake-orange);
-            position: relative;
-        }
-
-        .avatar-placeholder::after {
-            content: 'PLACEHOLDER';
-            position: absolute;
-            bottom: -25px;
-            font-size: 9px;
-            color: var(--text-dim);
-            letter-spacing: 2px;
-        }
-
         .pilot-status {
             position: absolute;
             bottom: 15px;
@@ -1244,6 +1219,34 @@
         .ship-tag.favorite {
             border-color: var(--drake-orange);
             color: var(--drake-orange);
+        }
+
+        .pilot-avatar-img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border: 3px solid var(--drake-orange);
+        }
+
+        .rsi-profile-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: var(--steel-dark);
+            border: 1px solid var(--drake-orange);
+            color: var(--drake-orange);
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+
+        .rsi-profile-link:hover {
+            background: var(--drake-orange);
+            color: var(--steel-dark);
         }
 
         /* Testimonials Section */
@@ -1392,7 +1395,7 @@
     <!-- Free Fly Event Banner - Remove "hidden" class when Free Fly is active -->
     <div class="free-fly-banner hidden">
         🚀 <strong>FREE FLY EVENT ACTIVE!</strong> Try Star Citizen free — no purchase required.
-        <a href="https://robertsspaceindustries.com/enlist?referral=STAR-RBFL-52HK" target="_blank">Play Now →</a>
+        <a href="https://robertsspaceindustries.com/enlist?referral=STAR-RBFL-52HK" target="_blank" rel="noopener">Play Now →</a>
     </div>
 
     <div class="caution-stripe"></div>
@@ -1494,7 +1497,7 @@
         </div>
     </div>
 
-    <section class="features">
+    <section class="features" id="features">
         <div class="section-header">
             <h2>Why Star Citizen</h2>
         </div>
@@ -1522,7 +1525,7 @@
         </div>
     </section>
 
-    <section class="careers">
+    <section class="careers" id="careers">
         <div class="section-header">
             <h2>Industrial Careers</h2>
         </div>
@@ -1697,14 +1700,14 @@
     </section>
 
     <!-- Meet Cayris Section -->
-    <section class="meet-cayris">
+    <section class="meet-cayris" id="meet-cayris">
         <div class="section-header">
             <h2>Meet The Founder</h2>
         </div>
 
         <div class="pilot-card">
             <div class="pilot-avatar">
-                <img src="Cayris.png" alt="Cayris - Founder of Caytek Industries" style="width: 220px; height: 220px; object-fit: cover; border: 3px solid var(--drake-orange);">
+                <img src="Cayris.png" alt="Cayris - Founder of Caytek Industries" class="pilot-avatar-img" loading="lazy">
                 <div class="pilot-status">
                     <span>UEE CITIZEN</span>
                     <span class="online">● ONLINE</span>
@@ -1738,7 +1741,7 @@
                     <span class="ship-tag">Golem</span>
                     <span class="ship-tag">Intrepid</span>
                 </div>
-                <a href="https://robertsspaceindustries.com/en/citizens/Cayris" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 10px 20px; background: var(--steel-dark); border: 1px solid var(--drake-orange); color: var(--drake-orange); text-decoration: none; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s ease;">
+                <a href="https://robertsspaceindustries.com/en/citizens/Cayris" target="_blank" rel="noopener" class="rsi-profile-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                     View RSI Profile
                 </a>
@@ -1747,7 +1750,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials">
+    <section class="testimonials" id="testimonials">
         <div class="section-header">
             <h2>Testimonials</h2>
         </div>
@@ -1888,7 +1891,7 @@
         </div>
     </section>
 
-    <section class="getting-started">
+    <section class="getting-started" id="getting-started">
         <div class="section-header">
             <h2>Getting Started</h2>
         </div>
@@ -1995,9 +1998,7 @@
         // Track referral clicks (for analytics)
         document.querySelectorAll('a[href*="referral=STAR-RBFL-52HK"]').forEach(link => {
             link.addEventListener('click', function() {
-                // If using Google Analytics, uncomment:
-                // gtag('event', 'referral_click', { 'event_category': 'engagement' });
-                console.log('Referral link clicked');
+                gtag('event', 'referral_click', { 'event_category': 'engagement' });
             });
         });
     </script>
